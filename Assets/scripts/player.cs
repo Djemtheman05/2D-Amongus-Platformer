@@ -11,7 +11,9 @@ public class player : MonoBehaviour
     int slower = 0;
     int dubbleDeath;
 
-    public GameObject Player;
+    public GameObject DeadBody;
+    public GameObject DeadBodyR;
+
     public GameObject hitBox;
 
     Animator m_Animator;
@@ -45,9 +47,18 @@ public class player : MonoBehaviour
     {
         if (dubbleDeath == 1)
         {
-            Destroy(gameObject);
-            GameObject deathAnimation = Instantiate(Player, t.position, Quaternion.identity);
-            m_Animator.SetTrigger("Die");
+            if(faceRight)
+            {
+                Debug.Log("right");
+                Destroy(gameObject);
+                GameObject deathAnimation = Instantiate(DeadBody, t.position, Quaternion.identity);
+            }
+            if (faceRight == false)
+            {
+                Debug.Log("left");
+                Destroy(gameObject);
+                GameObject deathAnimation = Instantiate(DeadBodyR, t.position, Quaternion.identity);
+            }
         }
 
         float ad = Input.GetAxis("Horizontal");

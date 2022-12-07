@@ -246,7 +246,8 @@ MonoBehaviour:
   jumpForce: 14
   groundcheckLength: 1.5
   totalJumps: 1
-  Player: {fileID: 2810625559291167145, guid: 7a70c06c6327fc9448388a2c222cbd7f, type: 3}
+  DeadBody: {fileID: 2810625559291167145, guid: 7a70c06c6327fc9448388a2c222cbd7f, type: 3}
+  DeadBodyR: {fileID: 7816345989376612399, guid: 862cbbdd25e37f445848893715e294ee, type: 3}
   hitBox: {fileID: 2591136787576968080, guid: 61896d883981ff645a8dd55096e2189c, type: 3}
   bazooka: {fileID: 1910421558}
   animator: {fileID: 606453518}
