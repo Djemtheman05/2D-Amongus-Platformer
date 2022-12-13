@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - Bazooka
   - Boom
+  - Enemy
   layers:
   - Default
   - TransparentFX

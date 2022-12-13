@@ -13,6 +13,7 @@ public class player : MonoBehaviour
 
     public GameObject DeadBody;
     public GameObject DeadBodyR;
+    public GameObject DeadBodyEnemy;
 
     public GameObject hitBox;
 
@@ -23,6 +24,8 @@ public class player : MonoBehaviour
     private Rigidbody2D rb2D;
     bool faceRight = true;
     Transform t;
+
+    public GameObject DeathColor;
 
     void OnTriggerEnter2D(Collider2D collision)
     {      
@@ -35,6 +38,16 @@ public class player : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            DeathColor.SetActive(true);
+            Destroy(gameObject);
+            Debug.Log("left");
+            GameObject deathAnimation = Instantiate(DeadBodyEnemy, t.position, DeadBodyR.transform.rotation);           
+        }
+    }
 
     void Start()
     {
@@ -43,10 +56,12 @@ public class player : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         remainingJumps = totalJumps;
     }
+
     private void FixedUpdate()
     {
         if (dubbleDeath == 1)
         {
+            DeathColor.SetActive(true);
             if(faceRight)
             {
                 Debug.Log("right");
@@ -57,7 +72,7 @@ public class player : MonoBehaviour
             {
                 Debug.Log("left");
                 Destroy(gameObject);
-                GameObject deathAnimation = Instantiate(DeadBodyR, t.position, Quaternion.identity);
+                GameObject deathAnimation = Instantiate(DeadBodyR, t.position, DeadBodyR.transform.rotation);
             }
         }
 
