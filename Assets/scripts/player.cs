@@ -44,7 +44,6 @@ public class player : MonoBehaviour
         {
             DeathColor.SetActive(true);
             Destroy(gameObject);
-            Debug.Log("left");
             GameObject deathAnimation = Instantiate(DeadBodyEnemy, t.position, DeadBodyR.transform.rotation);           
         }
     }
@@ -64,13 +63,11 @@ public class player : MonoBehaviour
             DeathColor.SetActive(true);
             if(faceRight)
             {
-                Debug.Log("right");
                 Destroy(gameObject);
                 GameObject deathAnimation = Instantiate(DeadBody, t.position, Quaternion.identity);
             }
             if (faceRight == false)
             {
-                Debug.Log("left");
                 Destroy(gameObject);
                 GameObject deathAnimation = Instantiate(DeadBodyR, t.position, DeadBodyR.transform.rotation);
             }

@@ -686,7 +686,7 @@ MonoBehaviour:
   BazookaBAnimation: {fileID: 1910421556}
   shootSound: {fileID: 606453520}
   shootSpeed: 1000
-  shootTimer: 1
+  shootTimer: 0
   shootPos: {fileID: 958435879}
   bomb: {fileID: 2463891692433113148, guid: 6db065996700cd7458acf9c8aaa86ed2, type: 3}
 --- !u!82 &606453520
@@ -1354,7 +1354,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 606453512}
   flip: 0
-  Collider: {fileID: 1134966146}
+  DeadBody: {fileID: 2701803773494565422, guid: 2f3a943e16e4fd0458e720bc92e818b4, type: 3}
+  DeadBodyR: {fileID: 36594136983117033, guid: f1c07eadf8ea9034dab4629e9767bd25, type: 3}
 --- !u!50 &1134966145
 Rigidbody2D:
   serializedVersion: 4
