@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject Player;
+    GameObject Player;
     public bool flip;
     float speed = 6f;
     bool faceright;
     Transform t;
     public GameObject DeadBody;
     public GameObject DeadBodyR;
+    public GameObject KillPlayer;
+    public GameObject KillPlayerR;
+    int dubbleDeath;
 
     private void Start()
     {
+        Player = GameObject.FindObjectOfType<player>().gameObject;
         t = transform;
     }
 
@@ -25,19 +29,17 @@ public class Enemy : MonoBehaviour
         {
             faceright = true;
             scale.x = Mathf.Abs(scale.x) * -1 * (flip ? -1 : 1);
-            transform.Translate(speed * Time.deltaTime * -1, 0, 0);
+            transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         else
         {
             faceright = false;
             scale.x = Mathf.Abs(scale.x) * (flip ? -1 : 1);
-            transform.Translate(speed * Time.deltaTime, 0, 0);
+            transform.Translate(speed * Time.deltaTime * -1, 0, 0);
         }
         transform.localScale = scale;
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+
+        if (dubbleDeath == 1)
         {
             if (faceright == true)
             {
@@ -48,6 +50,33 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(gameObject);
                 GameObject deathAnimation = Instantiate(DeadBodyR, t.position, DeadBodyR.transform.rotation);
+            }
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (faceright == true)
+            {
+                Destroy(gameObject);
+                GameObject deathAnimation = Instantiate(KillPlayer, t.position, Quaternion.identity);
+            }
+            if (faceright == false)
+            {
+                Destroy(gameObject);
+                GameObject deathAnimation = Instantiate(KillPlayerR, t.position, DeadBodyR.transform.rotation);
+            }
+        }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boom"))
+        {
+            dubbleDeath += 1;
+            if (dubbleDeath == 2)
+            {
+                dubbleDeath = 1;
             }
         }
     }
