@@ -4,22 +4,38 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    float minTras = -50;
-    float maxTras = -30;
+    float minTrasR = -50;
+    float maxTrasR = -30;
+
+    float minTrasL = 20;
+    float maxTrasL = 40;
 
     [SerializeField] GameObject[] ZombiePrefab;
     [SerializeField] float secondSpawnA;
 
     void Start()
     {
-        StartCoroutine(appleSpawn());
-        IEnumerator appleSpawn()
+        StartCoroutine(ZombieLSpawn());
+        IEnumerator ZombieLSpawn()
         {
             while (true)
             {
-                var wanted = Random.Range(minTras, maxTras);
+                var wanted = Random.Range(minTrasL, maxTrasL);
                 var position = new Vector3(wanted, transform.position.y);
-                secondSpawnA = Random.Range(0.2f, 1f);
+                secondSpawnA = Random.Range(2f, 4f);
+                GameObject gameObject = Instantiate(ZombiePrefab[Random.Range(0, ZombiePrefab.Length)],
+                position, Quaternion.identity);
+                yield return new WaitForSeconds(secondSpawnA);
+            }
+        }
+        StartCoroutine(ZombieRSpawn());
+        IEnumerator ZombieRSpawn()
+        {
+            while (true)
+            {
+                var wanted = Random.Range(minTrasR, maxTrasR);
+                var position = new Vector3(wanted, transform.position.y);
+                secondSpawnA = Random.Range(2f, 4f);
                 GameObject gameObject = Instantiate(ZombiePrefab[Random.Range(0, ZombiePrefab.Length)],
                 position, Quaternion.identity);
                 yield return new WaitForSeconds(secondSpawnA);
