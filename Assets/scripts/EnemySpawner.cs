@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 var wanted = Random.Range(minTrasL, maxTrasL);
                 var position = new Vector3(wanted, transform.position.y);
-                secondSpawnA = Random.Range(2f, 4f);
+                secondSpawnA = Random.Range(1f, 4f);
                 GameObject gameObject = Instantiate(ZombiePrefab[Random.Range(0, ZombiePrefab.Length)],
                 position, Quaternion.identity);
                 yield return new WaitForSeconds(secondSpawnA);
@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 var wanted = Random.Range(minTrasR, maxTrasR);
                 var position = new Vector3(wanted, transform.position.y);
-                secondSpawnA = Random.Range(2f, 4f);
+                secondSpawnA = Random.Range(0.5f, 3f);
                 GameObject gameObject = Instantiate(ZombiePrefab[Random.Range(0, ZombiePrefab.Length)],
                 position, Quaternion.identity);
                 yield return new WaitForSeconds(secondSpawnA);

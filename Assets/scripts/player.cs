@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public float speed = 10;
-    public float jumpForce = 10;
-    public float groundcheckLength =1;
+    public float speed = 15;
+    public float jumpForce = 15;
+    public float groundcheckLength = 2;
     public int totalJumps = 1;
     int slower = 0;
     int dubbleDeath;
@@ -112,15 +112,15 @@ public class player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.W))
         {
-            speed = 4;
-            jumpForce = 10;
+            speed = 8;
+            jumpForce = 12;
             slower += 2;
         }
 
         if(slower == 4 && Input.GetKeyDown(KeyCode.W))
         {
-            speed = 10;
-            jumpForce = 14;
+            speed = 15;
+            jumpForce = 15;
             slower -= 4;
         }
     }

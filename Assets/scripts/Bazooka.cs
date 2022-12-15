@@ -11,7 +11,8 @@ public class Bazooka : MonoBehaviour
 
     bool canShoot = false;
     int count = 0;
-    public float shootSpeed, shootTimer;
+    float shootSpeed = 1000f;
+    float shootTimer = 1f;
     private bool isShooting;
     public Transform shootPos;
     public GameObject bomb;
