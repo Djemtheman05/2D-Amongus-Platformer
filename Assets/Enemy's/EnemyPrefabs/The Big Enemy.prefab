@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 9213930760533635693}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -64.63, y: -2.88, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -168,12 +168,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7360f8d99151f6043bd36d992e85df7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KillBigEnemy: {fileID: 11400000, guid: bed16a7113241be4bb661cb71106c831, type: 2}
   flip: 0
   DeadBody: {fileID: 3271166697738966075, guid: 1b8d7c96a289d01459126e4bb9c5df17, type: 3}
   DeadBodyR: {fileID: 8004928408147834157, guid: b9262d0489a1d44408ead1cf42d7a2ba, type: 3}
   KillPlayer: {fileID: 1595949033921745569, guid: 25724787ac3bfc44393a59d89509bd00, type: 3}
   KillPlayerR: {fileID: 6171443407890476093, guid: dc7c8168d7abeb04f92de159e6f388fb, type: 3}
-  SweetSpot: {fileID: 0}
 --- !u!70 &2565912224195168674
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

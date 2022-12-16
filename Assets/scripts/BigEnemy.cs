@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BigEnemy : MonoBehaviour
 {
+    [SerializeField] private DestroyEnemySO KillBigEnemy;
+
     GameObject Player;
     public bool flip;
     float speed = 4f;
@@ -14,7 +16,6 @@ public class BigEnemy : MonoBehaviour
     public GameObject KillPlayer;
     public GameObject KillPlayerR;
     int dubbleDeath;
-    public Collider2D SweetSpot;
 
     private void Start()
     {
@@ -24,6 +25,11 @@ public class BigEnemy : MonoBehaviour
 
     private void Update()
     {
+        if (KillBigEnemy.DestroyEnemy == true)
+        {
+            Destroy(gameObject);
+        }
+
         Vector3 scale = transform.localScale;
 
         if (Player.transform.position.x > transform.position.x)
@@ -78,7 +84,6 @@ public class BigEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bull"))
         {
-            Debug.Log("sweetspot hit");
             dubbleDeath += 1;
         }
     }

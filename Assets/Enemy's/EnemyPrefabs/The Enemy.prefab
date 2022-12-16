@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ed6945a03f7e943aacec2207482a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KillEnemy: {fileID: 11400000, guid: bed16a7113241be4bb661cb71106c831, type: 2}
+  Stop: {fileID: 11400000, guid: b57b34b2b0743f042a19dba654505ae8, type: 2}
   flip: 0
   DeadBody: {fileID: 3271166697738966075, guid: 848df4390a9cf214daba745346f1e78c, type: 3}
   DeadBodyR: {fileID: 8004928408147834157, guid: 68f573f16ea34244e9367c327878a270, type: 3}

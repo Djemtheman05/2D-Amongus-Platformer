@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private DestroyEnemySO KillEnemy;
+
     GameObject Player;
     public bool flip;
     float speed = 5f;
@@ -23,8 +25,12 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        Vector3 scale = transform.localScale;
+        if(KillEnemy.DestroyEnemy == true)
+        {
+            Destroy(gameObject);
+        }
 
+        Vector3 scale = transform.localScale;
         if(Player.transform.position.x > transform.position.x)
         {
             faceright = true;

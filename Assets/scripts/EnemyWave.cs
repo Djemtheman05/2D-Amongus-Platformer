@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyWave : MonoBehaviour
 {
+    [SerializeField] private TimerSO Stop;
+
     public GameObject exclemationmarkR;
     public GameObject exclemationmarkL;
     bool rightOn;
@@ -67,5 +69,15 @@ public class EnemyWave : MonoBehaviour
         exclemationmarkR.SetActive(false);
         WallL.SetActive(false);
         Enable();
+    }
+    private void Update()
+    {
+        if(Stop.StopTimer == true)
+        {
+            WallL.SetActive(true);
+            WallR.SetActive(true);
+            exclemationmarkL.SetActive(false);
+            exclemationmarkR.SetActive(false);
+        }
     }
 }

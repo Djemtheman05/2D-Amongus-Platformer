@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    [SerializeField] private DestroyEnemySO KillEnemys;
+    [SerializeField] private TimerSO Stop;
+
     public float speed = 15;
     public float jumpForce = 15;
     public float groundcheckLength = 2;
@@ -14,8 +17,9 @@ public class player : MonoBehaviour
     public GameObject DeadBody;
     public GameObject DeadBodyR;
     public GameObject DeadBodyEnemy;
-
     public GameObject hitBox;
+    public GameObject DeathOptions;
+    public GameObject DeathScene;
 
     Animator m_Animator;
     public Animator bazooka; 
@@ -42,6 +46,10 @@ public class player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            DeathOptions.SetActive(true);
+            DeathScene.SetActive(true);
+            KillEnemys.DestroyEnemy = true;
+            Stop.StopTimer = true;
             DeathColor.SetActive(true);
             Destroy(gameObject);
             GameObject deathAnimation = Instantiate(DeadBodyEnemy, t.position, DeadBodyR.transform.rotation);           
@@ -50,6 +58,8 @@ public class player : MonoBehaviour
 
     void Start()
     {
+        KillEnemys.DestroyEnemy = false;
+        Stop.StopTimer = false;
         m_Animator = gameObject.GetComponent<Animator>();
         t = transform;
         rb2D = GetComponent<Rigidbody2D>();
@@ -60,14 +70,21 @@ public class player : MonoBehaviour
     {
         if (dubbleDeath == 1)
         {
+            DeathOptions.SetActive(true);
             DeathColor.SetActive(true);
-            if(faceRight)
+            DeathScene.SetActive(true);
+
+            if (faceRight)
             {
+                KillEnemys.DestroyEnemy = true;
+                Stop.StopTimer = true;
                 Destroy(gameObject);
                 GameObject deathAnimation = Instantiate(DeadBody, t.position, Quaternion.identity);
             }
             if (faceRight == false)
             {
+                KillEnemys.DestroyEnemy = true;
+                Stop.StopTimer = true;
                 Destroy(gameObject);
                 GameObject deathAnimation = Instantiate(DeadBodyR, t.position, DeadBodyR.transform.rotation);
             }
@@ -104,20 +121,20 @@ public class player : MonoBehaviour
             remainingJumps = totalJumps;
         }
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetKeyDown(KeyCode.Alpha4))
         {
             Jump();
         }
         Debug.DrawRay(transform.position, -transform.up * groundcheckLength, Color.blue);
 
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.Alpha9))
         {
             speed = 8;
             jumpForce = 12;
             slower += 2;
         }
 
-        if(slower == 4 && Input.GetKeyDown(KeyCode.W))
+        if(slower == 4 && Input.GetKeyDown(KeyCode.Alpha9))
         {
             speed = 15;
             jumpForce = 15;

@@ -274,6 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8c260937a77df45b7cd6c9866b0731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KillEnemys: {fileID: 11400000, guid: bed16a7113241be4bb661cb71106c831, type: 2}
+  Stop: {fileID: 11400000, guid: b57b34b2b0743f042a19dba654505ae8, type: 2}
   speed: 15
   jumpForce: 15
   groundcheckLength: 2
@@ -282,7 +284,9 @@ MonoBehaviour:
   DeadBodyR: {fileID: 7816345989376612399, guid: 862cbbdd25e37f445848893715e294ee, type: 3}
   DeadBodyEnemy: {fileID: 6397144428642977813, guid: 9a7714e372b1171469ad387f5149d125, type: 3}
   hitBox: {fileID: 2591136787576968080, guid: 61896d883981ff645a8dd55096e2189c, type: 3}
-  bazooka: {fileID: 0}
+  DeathOptions: {fileID: 0}
+  DeathScene: {fileID: 0}
+  bazooka: {fileID: 189707673}
   animator: {fileID: 38261128}
   DeathColor: {fileID: 0}
 --- !u!61 &38261131
@@ -839,7 +843,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.52}
+  m_Offset: {x: 0, y: 0.4}
   serializedVersion: 2
   m_Radius: 0.21
 --- !u!1 &263797476
@@ -1199,7 +1203,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.4
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1929,7 +1933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966152704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.4236, y: 1.9680638, z: -0.4759207}
+  m_LocalPosition: {x: -21.37, y: 1.9680638, z: -0.4759207}
   m_LocalScale: {x: 1, y: 16.862, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3169,7 +3173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929100086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.4864, y: 1.9680638, z: -0.4759207}
+  m_LocalPosition: {x: 17.55, y: 1.9680638, z: -0.4759207}
   m_LocalScale: {x: 1, y: 16.862, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
