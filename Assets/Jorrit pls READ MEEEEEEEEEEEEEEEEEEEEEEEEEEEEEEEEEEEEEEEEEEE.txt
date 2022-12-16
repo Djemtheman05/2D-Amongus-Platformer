@@ -1,0 +1,3 @@
+Hey Jorrit. When you die in my Game, there are occasional unity console errors that do NOT affect the game. I can build my game just fine and the controls are already set for arcade.
+
+Hopefully this is not a big deal.
