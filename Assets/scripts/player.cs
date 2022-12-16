@@ -74,7 +74,7 @@ public class player : MonoBehaviour
             DeathColor.SetActive(true);
             DeathScene.SetActive(true);
 
-            if (faceRight)
+            if (faceRight == true)
             {
                 KillEnemys.DestroyEnemy = true;
                 Stop.StopTimer = true;

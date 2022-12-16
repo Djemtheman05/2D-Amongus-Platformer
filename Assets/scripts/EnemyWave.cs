@@ -20,10 +20,13 @@ public class EnemyWave : MonoBehaviour
         StartCoroutine(EnemySpawnR());
         IEnumerator EnemySpawnR()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             WallR.SetActive(false);
             WallL.SetActive(false);
-            Enable();
+            if (Stop.StopTimer == false)
+            {
+                Enable();
+            }
         }
     }
     void Enable()

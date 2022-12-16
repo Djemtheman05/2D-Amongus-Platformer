@@ -421,6 +421,50 @@ MonoBehaviour:
   Slide2: {fileID: 218001340}
   Slide3: {fileID: 1215533422}
   Portal: {fileID: 262513002}
+--- !u!1 &45912065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 45912067}
+  - component: {fileID: 45912066}
+  m_Layer: 0
+  m_Name: Exit game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &45912066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45912065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21df0a240b52d4b4d9fdb3a8e65702dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &45912067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45912065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &189707671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 78.7, y: -7.4}
+  m_AnchoredPosition: {x: 116.8, y: -33.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455621061
@@ -1933,7 +1977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966152704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.37, y: 1.9680638, z: -0.4759207}
+  m_LocalPosition: {x: -18.52, y: 1.9680638, z: -0.4759207}
   m_LocalScale: {x: 1, y: 16.862, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2191,7 +2235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.392, y: 132.03282}
+  m_AnchoredPosition: {x: 0.392, y: 159}
   m_SizeDelta: {x: 871.6278, y: 147.8221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099721619
@@ -3173,7 +3217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929100086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.55, y: 1.9680638, z: -0.4759207}
+  m_LocalPosition: {x: 15.33, y: 1.9680638, z: -0.4759207}
   m_LocalScale: {x: 1, y: 16.862, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3421,7 +3465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240.6, y: -7.4}
+  m_AnchoredPosition: {x: -240.6, y: 0.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045687880
@@ -3445,7 +3489,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Survive the wave of zombies for 2 min and then you won. Shoot the big zombies
-    in the eyes
+    in the eyes. If there are ! the zombies can only come from that side
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3508,7 +3552,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -90.4946, w: 0}
+  m_margin: {x: 0, y: 0, z: -140.33612, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
