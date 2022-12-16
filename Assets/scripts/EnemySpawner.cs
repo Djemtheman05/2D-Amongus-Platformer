@@ -4,41 +4,70 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    float minTrasR = -50;
-    float maxTrasR = -30;
+    float minTrasL = -50;
+    float maxTrasL = -30;
 
-    float minTrasL = 20;
-    float maxTrasL = 40;
+    float minTrasR = 20;
+    float maxTrasR = 40;
 
-    [SerializeField] GameObject[] ZombiePrefab;
+    [SerializeField] GameObject[] EnemyPrefab;
+    [SerializeField] GameObject[] BigEnemyPrefab;
     [SerializeField] float secondSpawnA;
+    [SerializeField] float secondSpawnB;
 
     void Start()
     {
-        StartCoroutine(ZombieLSpawn());
-        IEnumerator ZombieLSpawn()
+        StartCoroutine(EnemySpawnR());
+        IEnumerator EnemySpawnR()
+        {
+            while (true)
+            {
+                var wanted = Random.Range(minTrasR, maxTrasR);
+                var position = new Vector3(wanted, transform.position.y);
+                secondSpawnA = Random.Range(1f, 4f);
+                GameObject gameObject = Instantiate(EnemyPrefab[Random.Range(0, EnemyPrefab.Length)],
+                position, Quaternion.identity);
+                yield return new WaitForSeconds(secondSpawnA);
+            }
+        }
+        StartCoroutine(EnemySpawnL());
+        IEnumerator EnemySpawnL()
         {
             while (true)
             {
                 var wanted = Random.Range(minTrasL, maxTrasL);
                 var position = new Vector3(wanted, transform.position.y);
                 secondSpawnA = Random.Range(1f, 4f);
-                GameObject gameObject = Instantiate(ZombiePrefab[Random.Range(0, ZombiePrefab.Length)],
+                GameObject gameObject = Instantiate(EnemyPrefab[Random.Range(0, EnemyPrefab.Length)],
                 position, Quaternion.identity);
                 yield return new WaitForSeconds(secondSpawnA);
             }
         }
-        StartCoroutine(ZombieRSpawn());
-        IEnumerator ZombieRSpawn()
+
+        StartCoroutine(BigEnemySpawnL());
+        IEnumerator BigEnemySpawnL()
+        {
+            while (true)
+            {
+                var wanted = Random.Range(minTrasL, maxTrasL);
+                var position = new Vector3(wanted, transform.position.y);
+                secondSpawnB = Random.Range(5f, 20f);
+                GameObject gameObject = Instantiate(BigEnemyPrefab[Random.Range(0, BigEnemyPrefab.Length)],
+                position, Quaternion.identity);
+                yield return new WaitForSeconds(secondSpawnB);
+            }
+        }
+        StartCoroutine(BigEnemySpawnR());
+        IEnumerator BigEnemySpawnR()
         {
             while (true)
             {
                 var wanted = Random.Range(minTrasR, maxTrasR);
                 var position = new Vector3(wanted, transform.position.y);
-                secondSpawnA = Random.Range(0.5f, 3f);
-                GameObject gameObject = Instantiate(ZombiePrefab[Random.Range(0, ZombiePrefab.Length)],
+                secondSpawnB = Random.Range(5f, 20f);
+                GameObject gameObject = Instantiate(BigEnemyPrefab[Random.Range(0, BigEnemyPrefab.Length)],
                 position, Quaternion.identity);
-                yield return new WaitForSeconds(secondSpawnA);
+                yield return new WaitForSeconds(secondSpawnB);
             }
         }
     }

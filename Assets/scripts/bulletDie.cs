@@ -18,6 +18,14 @@ public class bulletDie : MonoBehaviour
             Die();
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GameObject newBomb = Instantiate(hitBox, hitBoxPlace.position, Quaternion.identity);
+            Die();
+        }
+    }
     void Die()
     {
         if (explosion != null)

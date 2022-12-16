@@ -9,6 +9,8 @@ TagManager:
   - Bazooka
   - Boom
   - Enemy
+  - Wall
+  - Bull
   layers:
   - Default
   - TransparentFX

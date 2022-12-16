@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class BigEnemy : MonoBehaviour
 {
     GameObject Player;
     public bool flip;
-    float speed = 6f;
+    float speed = 4f;
     bool faceright;
     Transform t;
     public GameObject DeadBody;
@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public GameObject KillPlayer;
     public GameObject KillPlayerR;
     int dubbleDeath;
+    public Collider2D SweetSpot;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class Enemy : MonoBehaviour
     {
         Vector3 scale = transform.localScale;
 
-        if(Player.transform.position.x > transform.position.x)
+        if (Player.transform.position.x > transform.position.x)
         {
             faceright = true;
             scale.x = Mathf.Abs(scale.x) * -1 * (flip ? -1 : 1);
@@ -67,21 +68,18 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
                 GameObject deathAnimation = Instantiate(KillPlayerR, t.position, DeadBodyR.transform.rotation);
             }
-        }
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }
+            }
+            if (collision.gameObject.CompareTag("Wall"))
+            {
+                Destroy(gameObject);
+            }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Boom"))
+        if (collision.gameObject.CompareTag("Bull"))
         {
+            Debug.Log("sweetspot hit");
             dubbleDeath += 1;
-            if (dubbleDeath == 2)
-            {
-                dubbleDeath = 1;
-            }
         }
     }
 }

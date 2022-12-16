@@ -7,10 +7,22 @@ public class EnemyWave : MonoBehaviour
     public GameObject exclemationmarkR;
     public GameObject exclemationmarkL;
     bool rightOn;
+    public GameObject WallR;
+    public GameObject WallL;
 
     void Start()
     {
-        Enable();
+        WallR.SetActive(true);
+        WallL.SetActive(true);
+
+        StartCoroutine(EnemySpawnR());
+        IEnumerator EnemySpawnR()
+        {
+            yield return new WaitForSeconds(2f);
+            WallR.SetActive(false);
+            WallL.SetActive(false);
+            Enable();
+        }
     }
     void Enable()
     {
@@ -27,13 +39,15 @@ public class EnemyWave : MonoBehaviour
 
     IEnumerator exclemationmarkSpawnL()
     {
-        yield return new WaitForSeconds(Random.Range(1f, 10f));
+        yield return new WaitForSeconds(Random.Range(1f, 5f));
+        WallR.SetActive(true);
         exclemationmarkL.SetActive(true);
         StartCoroutine(exclemationmarkLStop());
     }
     IEnumerator exclemationmarkSpawnR()
     {
-        yield return new WaitForSeconds(Random.Range(1f, 10f));
+        yield return new WaitForSeconds(Random.Range(1f, 5f));
+        WallL.SetActive(true);
         exclemationmarkR.SetActive(true);
         StartCoroutine(exclemationmarkRStop());
     }
@@ -42,14 +56,16 @@ public class EnemyWave : MonoBehaviour
 
     IEnumerator exclemationmarkLStop()
     {
-        yield return new WaitForSeconds(Random.Range(5f, 20f));
+        yield return new WaitForSeconds(Random.Range(2f, 5f));
         exclemationmarkL.SetActive(false);
+        WallR.SetActive(false);
         Enable();
     }
     IEnumerator exclemationmarkRStop()
     {
-        yield return new WaitForSeconds(Random.Range(5f, 20f));
+        yield return new WaitForSeconds(Random.Range(2f, 5f));
         exclemationmarkR.SetActive(false);
+        WallL.SetActive(false);
         Enable();
     }
 }
