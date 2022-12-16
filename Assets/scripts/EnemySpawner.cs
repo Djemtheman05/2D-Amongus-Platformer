@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    float minTrasL = -50;
-    float maxTrasL = -30;
+    float minTrasL = -34;
+    float maxTrasL = -35;
 
-    float minTrasR = 20;
-    float maxTrasR = 40;
+    float minTrasR = 17;
+    float maxTrasR = 18;
 
     [SerializeField] GameObject[] EnemyPrefab;
     [SerializeField] GameObject[] BigEnemyPrefab;

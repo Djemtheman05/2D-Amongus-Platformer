@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     GameObject Player;
     public bool flip;
-    float speed = 6f;
+    float speed = 5f;
     bool faceright;
     Transform t;
     public GameObject DeadBody;

@@ -18,7 +18,7 @@ public class EnemyWave : MonoBehaviour
         StartCoroutine(EnemySpawnR());
         IEnumerator EnemySpawnR()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             WallR.SetActive(false);
             WallL.SetActive(false);
             Enable();

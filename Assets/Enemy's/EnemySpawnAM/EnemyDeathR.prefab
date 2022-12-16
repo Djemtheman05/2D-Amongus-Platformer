@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6978596802562746022}
   - component: {fileID: 1630652849248110481}
   - component: {fileID: -5592807760354600166}
+  - component: {fileID: 7049779812851932973}
   m_Layer: 0
   m_Name: EnemyDeathR
   m_TagString: Untagged
@@ -152,5 +153,17 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.56, y: 0.03}
+  m_Size: {x: 0.56, y: 0.01}
   m_EdgeRadius: 0
+--- !u!114 &7049779812851932973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8004928408147834157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55cee210d19ccd9438f9087ff86ba5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
