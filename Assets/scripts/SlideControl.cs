@@ -10,6 +10,7 @@ public class SlideControl : MonoBehaviour
     public GameObject Slide1;
     public GameObject Slide2;
     public GameObject Slide3;
+    public GameObject Portal;
 
     void Update()
     {
@@ -27,8 +28,12 @@ public class SlideControl : MonoBehaviour
         {
             Slide2.SetActive(false);
             Slide3.SetActive(true);
+            Portal.SetActive(true);
         }
-        else if (count == 3)
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal"))
         {
             SceneManager.LoadScene("MainGame");
         }
