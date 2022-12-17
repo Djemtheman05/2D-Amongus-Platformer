@@ -79,8 +79,8 @@ public class EnemyWave : MonoBehaviour
         {
             WallL.SetActive(true);
             WallR.SetActive(true);
-            exclemationmarkL.SetActive(false);
-            exclemationmarkR.SetActive(false);
+            Destroy(exclemationmarkL);
+            Destroy(exclemationmarkR);
         }
     }
 }
