@@ -30,7 +30,7 @@ public class Bazooka : MonoBehaviour
         {
             BazookaBAnimation.GetComponent<Renderer>().enabled = true;
         }
-        if(Input.GetKeyDown(KeyCode.Alpha8) && !isShooting && canShoot)   
+        if(Input.GetKeyDown(KeyCode.Keypad8) && !isShooting && canShoot)   
         {
             shootSound.Play();
             StartCoroutine(Shoot());
