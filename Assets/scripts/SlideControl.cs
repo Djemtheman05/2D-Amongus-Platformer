@@ -14,7 +14,7 @@ public class SlideControl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Keypad5))
         {
             count += 1;
         }

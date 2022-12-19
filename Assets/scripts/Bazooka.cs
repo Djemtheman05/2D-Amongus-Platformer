@@ -26,7 +26,7 @@ public class Bazooka : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.Keypad9))
         {
             BazookaBAnimation.GetComponent<Renderer>().enabled = true;
         }
@@ -35,13 +35,13 @@ public class Bazooka : MonoBehaviour
             shootSound.Play();
             StartCoroutine(Shoot());
         }
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.Keypad9))
         {
             canShoot = true;
             count += 2;
         }
 
-        if (count == 4 && Input.GetKeyDown(KeyCode.Alpha9))
+        if (count == 4 && Input.GetKeyDown(KeyCode.Keypad9))
         {
             canShoot = false;
             count -= 4;
@@ -72,7 +72,7 @@ public class Bazooka : MonoBehaviour
 
     private IEnumerator renderBazooka()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.Keypad9))
         {
             yield return new WaitForSeconds(1.0f);
             BazookaBAnimation.GetComponent<Renderer>().enabled = true;

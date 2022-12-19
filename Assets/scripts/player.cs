@@ -121,20 +121,20 @@ public class player : MonoBehaviour
             remainingJumps = totalJumps;
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha4))
+        if(Input.GetKeyDown(KeyCode.Keypad4))
         {
             Jump();
         }
         Debug.DrawRay(transform.position, -transform.up * groundcheckLength, Color.blue);
 
-        if(Input.GetKeyDown(KeyCode.Alpha9))
+        if(Input.GetKeyDown(KeyCode.Keypad9))
         {
             speed = 8;
             jumpForce = 12;
             slower += 2;
         }
 
-        if(slower == 4 && Input.GetKeyDown(KeyCode.Alpha9))
+        if(slower == 4 && Input.GetKeyDown(KeyCode.Keypad9))
         {
             speed = 15;
             jumpForce = 15;
