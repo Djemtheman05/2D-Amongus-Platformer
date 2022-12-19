@@ -127,14 +127,14 @@ public class player : MonoBehaviour
         }
         Debug.DrawRay(transform.position, -transform.up * groundcheckLength, Color.blue);
 
-        if(Input.GetKeyDown(KeyCode.Keypad9))
+        if(Input.GetKeyDown(KeyCode.Keypad8))
         {
             speed = 8;
             jumpForce = 12;
             slower += 2;
         }
 
-        if(slower == 4 && Input.GetKeyDown(KeyCode.Keypad9))
+        if(slower == 4 && Input.GetKeyDown(KeyCode.Keypad8))
         {
             speed = 15;
             jumpForce = 15;

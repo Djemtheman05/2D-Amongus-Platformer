@@ -13,7 +13,7 @@ public class BazookaAM : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad9))
+        if (Input.GetKeyDown(KeyCode.Keypad8))
         {
             moveBazooka.SetTrigger("Move");
         }
