@@ -3642,7 +3642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Survive the wave of zombies for 2 min and then you won. Shoot the big zombies
+  m_text: Survive the wave of zombies for 1 min and then you won. Shoot the big zombies
     in the eyes. If there are ! the zombies can only come from that side
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private TimerSO Stop;
 
     float currentTime;
-    float startingTime = 120f;
+    float startingTime = 60f;
     bool StopTimer = false;
 
     [SerializeField] VisualEffect BigSnow;
