@@ -134,7 +134,7 @@ public class player : MonoBehaviour
             slower += 2;
         }
 
-        if(slower == 4 && Input.GetKeyDown(KeyCode.Keypad8) || Input.GetKeyDown(KeyCode.LeftShift))
+        if(slower == 4 && Input.GetKeyDown(KeyCode.Keypad8) || slower == 4 && Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = 15;
             jumpForce = 15;
